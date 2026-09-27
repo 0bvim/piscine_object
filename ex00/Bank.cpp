@@ -54,6 +54,34 @@ void Bank::addClientAccount(Account* account)
     _clientAccounts.push_back(account);
 }
 
+void Bank::removeClientAccount(Account* account)
+{
+}
+
+void Bank::changeClientId(Account* account, int newId)
+{
+}
+
+void Bank::changeAccountValue(Account* account, int newValue)
+{
+}
+
+void Bank::checkFunds(Account* account)
+{
+}
+
+void Bank::withdrawFunds(Account* account, int amount)
+{
+}
+
+void Bank::depositFunds(Account* account, int amount)
+{
+}
+
+bool Bank::canLoanMoney(Account* account, int amount)
+{
+}
+
 std::ostream& operator<<(std::ostream& os, const Bank& bank)
 {
     os << "Bank informations : " << std::endl;

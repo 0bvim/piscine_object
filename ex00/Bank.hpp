@@ -26,6 +26,13 @@ public:
 
     void setLiquidity(int liquidity);
     void addClientAccount(Account *account);
+    void removeClientAccount(Account *account);
+    void changeClientId(Account *account, int newId);
+    void changeAccountValue(Account *account, int newValue);
+    void checkFunds(Account *account);
+    void withdrawFunds(Account *account, int amount);
+    void depositFunds(Account *account, int amount);
+    bool canLoanMoney(Account *account, int amount);
 
     friend std::ostream& operator<<(std::ostream& os, const Bank& bank);
 };
