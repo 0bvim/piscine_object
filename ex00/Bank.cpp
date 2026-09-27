@@ -2,7 +2,7 @@
 // Created by Vinicius de Freitas Pereira on 20/09/26.
 //
 
-#include "Bank.h"
+#include "Bank.hpp"
 
 Bank::Bank()
 {
@@ -14,12 +14,12 @@ Bank::Bank(const int liquidity)
     setLiquidity(liquidity);
 }
 
-Bank::Bank(Bank const &rhs)
+Bank::Bank(Bank const& rhs)
 {
     *this = rhs;
 }
 
-Bank::Bank &operator=(Bank const &rhs)
+Bank& Bank::operator=(Bank const& rhs)
 {
     if (this != &rhs)
     {
@@ -29,14 +29,17 @@ Bank::Bank &operator=(Bank const &rhs)
     return *this;
 }
 
-Bank::~Bank() {}
+
+Bank::~Bank()
+{
+}
 
 int Bank::getLiquidity() const
 {
     return _liquidity;
 }
 
-std::vector<Account *> Bank::getClientAccounts() const
+std::vector<Account*> Bank::getClientAccounts() const
 {
     return _clientAccounts;
 }
@@ -46,16 +49,19 @@ void Bank::setLiquidity(int liquidity)
     _liquidity = liquidity;
 }
 
-void Bank::addClientAccount(Account *account)
+void Bank::addClientAccount(Account* account)
 {
     _clientAccounts.push_back(account);
 }
 
-friend std::ostream& operator<<(std::ostream& os, const Bank& bank)
+std::ostream& operator<<(std::ostream& os, const Bank& bank)
 {
     os << "Bank informations : " << std::endl;
     os << "Liquidity : " << bank.getLiquidity() << std::endl;
-    for (Account &clientAccount : bank.getClientAccounts())
-        os << *clientAccount << std::endl;
+    std::vector<Account*> clientAccounts = bank.getClientAccounts();
+    for (std::vector<Account*>::const_iterator it = clientAccounts.begin();
+         it != clientAccounts.end();
+         ++it)
+        os << **it << std::endl;
     return (os);
 }

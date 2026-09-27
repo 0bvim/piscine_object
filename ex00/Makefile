@@ -1,8 +1,8 @@
 CXX      = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME     = programa
-SRCS     = src/main.cpp
+NAME     = ex00
+SRCS     = main.cpp Account.cpp Bank.cpp
 OBJS     = $(SRCS:.cpp=.o)
 
 all: $(NAME)

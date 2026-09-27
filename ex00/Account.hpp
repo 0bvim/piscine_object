@@ -5,6 +5,7 @@
 #ifndef PISCINE_OBJECT_ACCOUNT_H
 #define PISCINE_OBJECT_ACCOUNT_H
 
+#include <ostream>
 
 
 class Account {
@@ -25,7 +26,7 @@ public:
     void setId(int id);
     void setValue(int value);
 
-    friend std::ostream& operator<<(std::ostream& os, const Account& account);
+    friend std::ostream &operator<<(std::ostream& os, const Account& account);
 };
 
 

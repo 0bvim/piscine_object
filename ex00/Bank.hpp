@@ -4,7 +4,9 @@
 
 #ifndef PISCINE_OBJECT_BANK_H
 #define PISCINE_OBJECT_BANK_H
-#include "Account.h"
+#include "Account.hpp"
+#include <vector>
+#include <ostream>
 
 
 class Bank {
